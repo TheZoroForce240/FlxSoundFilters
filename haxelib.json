@@ -1,0 +1,12 @@
+{
+    "name": "flxsoundfilters",
+    "url" : "https://github.com/TheZoroForce240/FlxSoundFilters",
+    "license": "MIT",
+    "tags": ["haxeflixel", "flixel", "openal"],
+    "description": "OpenAL filter/effect support for HaxeFlixel",
+    "version": "0.1.0",
+    "classPath": "source/",
+    "releasenote": "",
+    "contributors": ["TheZoroForce240"],
+    "dependencies": {}
+}
