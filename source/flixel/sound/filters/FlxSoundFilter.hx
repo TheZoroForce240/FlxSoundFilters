@@ -72,7 +72,7 @@ class FlxSoundFilter extends FlxBasic
 	{
 		#if lime_openal
 		var soundSource:ALSource = getSoundSource(sound);
-		if (soundSource == null) return;
+		if (soundSource == null || _filter == null) return;
 
 		if (_dirtyEffectsCount != -1)
 		{
