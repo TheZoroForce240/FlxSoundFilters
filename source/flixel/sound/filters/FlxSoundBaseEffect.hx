@@ -4,6 +4,7 @@ package flixel.sound.filters;
 import lime.media.openal.AL;
 import lime.media.openal.ALEffect;
 import lime.media.openal.ALAuxiliaryEffectSlot;
+using flixel.sound.filters.extensions.ALExtension;
 #end
 
 import flixel.FlxBasic;
@@ -39,8 +40,16 @@ class FlxSoundBaseEffect extends FlxBasic
 	override public function destroy()
 	{
 		#if lime_openal
-		_auxSlot = null;
-		_effect = null;
+		if (_auxSlot != null) 
+		{
+			AL.deleteAux(_auxSlot);
+			_auxSlot = null;
+		}
+		if (_effect != null)
+		{
+			AL.deleteEffect(_effect);
+			_effect = null;
+		} 
 		#end
 	}
 }

@@ -5,6 +5,7 @@ import flixel.util.FlxDestroyUtil;
 import lime.media.openal.AL;
 import lime.media.openal.ALFilter;
 import lime.media.openal.ALSource;
+using flixel.sound.filters.extensions.ALExtension;
 #end
 import flixel.sound.FlxSound;
 import flixel.FlxBasic;
@@ -187,7 +188,11 @@ class FlxSoundFilter extends FlxBasic
 	{
 		FlxDestroyUtil.destroyArray(_effects);
 		#if lime_openal
-		_filter = null;
+		if (_filter != null)
+		{
+			AL.deleteFilter(_filter);
+			_filter = null;
+		}
 		#end
 	}
 }
